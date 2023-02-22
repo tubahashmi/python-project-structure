@@ -40,8 +40,7 @@ Maintainers:
 - [x] VSCode workspace settings updated.
 - [x] Code formatted.
 - [x] `README.md` file updated.
-- [x] Environment variables file updated and formatted.
-- [x] Multiple documentation and formatting fixes applied.
+- [x] Documentation and formatting fixes applied.
 - [x] `requirements.txt` updated.
 - [x] `CHANGELOG.md` updated.
 

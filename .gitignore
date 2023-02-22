@@ -131,3 +131,6 @@ nosetests.xml
 
 # Windows
 Thumbs.db
+
+# Idea
+.idea/

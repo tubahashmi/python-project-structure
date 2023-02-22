@@ -81,6 +81,6 @@ Format code using:
     
     ```
 3. Pylint
-```shell script
-    pylint --rcfile=.pylintrc .
-```
+    ```shell script
+    pylint --rcfile=.pylintrc *.py
+    ```
