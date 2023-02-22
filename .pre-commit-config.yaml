@@ -1,0 +1,163 @@
+# pre-commit configuration file.
+#
+# This pre-commit config file describes what repositories and hooks are
+# installed and run on commit.
+#
+# Usages:
+#   - Install pre-commit
+#   - Add pre-commit configuration
+#   - Install the git hook scripts
+#   - Run against all the files (optional)
+#
+# Examples:
+#   - Install pre-commit: `pip install pre-commit`
+#   - Check pre-commit version: `pre-commit --version`
+#   - Add pre-commit sample configuration: `pre-commit sample-config`
+#   - Add configurations in config file `.pre-commit-config.yaml`
+#   - Set up the git hook scripts: `pre-commit install`
+#   - Now pre-commit will run automatically on git commit
+#
+# Notes:
+#   Use following links for more information:
+#   - <https://pre-commit.com>
+#   - <https://pre-commit.com/hooks.html>
+#
+# Authors:
+#   - Tuba Hashmi <hashmiatna@gmail.com>
+#
+# Maintainers:
+#   - Tuba Hashmi <hashmiatna@gmail.com>
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+        name: Check for added large files
+        description: Prevent giant files from being committed.
+        entry: check-added-large-files
+        language: python
+      - id: check-ast
+        name: Check Python AST
+        description: Simply check whether the files parse as valid Python.
+        entry: check-ast
+        language: python
+        types: [python]
+      - id: check-docstring-first
+        name: Check docstring is first
+        description: Checks a common error of defining a docstring after code.
+        entry: check-docstring-first
+        language: python
+        types: [python]
+      - id: check-executables-have-shebangs
+        name: Check that executables have shebangs
+        description: Ensures that (non-binary) executables have a shebang.
+        entry: check-executables-have-shebangs
+        language: python
+        types: [text, executable]
+        stages: [commit, push, manual]
+      - id: check-json
+        name: Check JSON
+        description: This hook checks JSON files for parseable syntax.
+        entry: check-json
+        language: python
+        types: [json]
+        exclude: cspell.json
+      - id: check-toml
+        name: Check TOML
+        description: This hook checks TOML files for parseable syntax.
+        entry: check-toml
+        language: python
+        types: [toml]
+      - id: check-xml
+        name: Check XML
+        description: This hook checks XML files for parseable syntax.
+        entry: check-xml
+        language: python
+        types: [xml]
+      - id: check-yaml
+        name: Check YAML
+        description: This hook checks YAML files for parseable syntax.
+        entry: check-yaml
+        language: python
+        types: [yaml]
+      - id: detect-private-key
+        name: Detect Private Key
+        description: Detects the presence of private keys.
+        entry: detect-private-key
+        language: python
+        types: [text]
+      - id: double-quote-string-fixer
+        name: Fix double quoted strings
+        description: This hook replaces double quoted strings with single quoted strings.
+        entry: double-quote-string-fixer
+        language: python
+        types: [python]
+      - id: end-of-file-fixer
+        name: Fix End of Files
+        description: Ensures that a file is either empty, or ends with one newline.
+        entry: end-of-file-fixer
+        language: python
+        types: [text]
+        stages: [commit, push, manual]
+      - id: mixed-line-ending
+        name: Mixed line ending
+        description: Replaces or checks mixed line ending.
+        entry: mixed-line-ending
+        language: python
+        types: [text]
+      - id: requirements-txt-fixer
+        name: Fix requirements.txt
+        description: Sorts entries in requirements.txt.
+        entry: requirements-txt-fixer
+        language: python
+        files: requirements.*\.txt$
+  - repo: local
+    hooks:
+      - id: pylint
+        name: Perform Python static code analysis with Pylint
+        entry: venv/bin/pylint --rcfile=.pylintrc
+        language: python
+        require_serial: true
+        types: [python]
+  - repo: local
+    hooks:
+      - id: isort
+        name: Sort Python imports with isort
+        entry: venv/bin/isort --settings-file=.isort.cfg
+        language: python
+        language_version: python3
+        minimum_pre_commit_version: "2.9.0"
+        require_serial: true
+        types_or: [python]
+  - repo: local
+    hooks:
+      - id: black
+        description: "Black: The uncompromising Python code formatter."
+        name: Format Python code with Black
+        entry: venv/bin/black --config=.black.toml
+        language: python
+        language_version: python3
+        minimum_pre_commit_version: 2.9.2
+        require_serial: true
+        types_or: [python]
+  # --------------------------------------------
+  # NOTE: Commented Mypy configuration as we are not using Python with type.
+  # - repo: local
+  #   hooks:
+  #     - id: mypy
+  #       name: Perform Python static type check with Mypy
+  #       entry: venv/bin/mypy
+  #       language: python
+  #       require_serial: true
+  #       types: [python]
+  # --------------------------------------------
+  - repo: local
+    hooks:
+      - id: bandit
+        description: Bandit is a tool for finding common security issues in Python code.
+        name: Perform Python security analysis with Bandit
+        entry: venv/bin/bandit
+        language: python
+        language_version: python3
+        types: [python]

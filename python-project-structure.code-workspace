@@ -1,0 +1,196 @@
+/* Visual Studio Code workspace settings file.
+
+This file contains settings stored inside workspace and only apply when the
+workspace is opened.
+
+Usages:
+  With this file nearly every part of Visual Studio Code's editor, user
+  interface and functional behavior has options to be modified.
+
+Notes:
+  Use following links for more information:
+  - <https://code.visualstudio.com/docs/getstarted/settings>
+
+Authors:
+  - Tuba Hashmi <hashmiatna@gmail.com>
+
+Maintainers:
+  - Tuba Hashmi <hashmiatna@gmail.com>
+*/
+
+{
+  // Path of the working directory
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+
+  // Settings of the workspace
+  "settings": {
+    // editor settings
+    "editor.autoClosingBrackets": "languageDefined",
+    "editor.autoClosingQuotes": "languageDefined",
+    "editor.autoIndent": "full",
+    "editor.autoSurround": "languageDefined",
+    "editor.codeLens": true,
+    "editor.colorDecorators": true,
+    "editor.columnSelection": false,
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.detectIndentation": true,
+    "editor.fontSize": 14,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.minimap.maxColumn": 100,
+    "editor.minimap.showSlider": "always",
+    "editor.mouseWheelZoom": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.quickSuggestions": {
+      "comments": true,
+      "other": true,
+      "strings": true
+    },
+    "editor.renderControlCharacters": false,
+    "editor.renderWhitespace": "selection",
+    "editor.rulers": [80, 100, 120],
+    "editor.showFoldingControls": "always",
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "off",
+    "editor.tabSize": 4,
+    "editor.trimAutoWhitespace": true,
+    "editor.wordWrap": "off",
+    "editor.wordWrapColumn": 80,
+
+    // files settings
+    "files.eol": "\n",
+
+    // prettier settings
+    "prettier.enable": true,
+    "prettier.endOfLine": "lf",
+    "prettier.printWidth": 80,
+
+    // python settings
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.extraPaths": [],
+    "python.autoComplete.addBrackets": true,
+    "python.formatting.blackArgs": ["--config=${workspaceFolder}/.black.toml"],
+    "python.formatting.blackPath": "${workspaceFolder}/venv/bin/black",
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "python.linting.banditArgs": [],
+    "python.linting.banditEnabled": true,
+    "python.linting.banditPath": "${workspaceFolder}/venv/bin/bandit",
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.mypyArgs": [],
+    "python.linting.mypyCategorySeverity.error": "Error",
+    "python.linting.mypyCategorySeverity.note": "Information",
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyPath": "${workspaceFolder}/venv/bin/mypy",
+    "python.linting.pylintArgs": [
+      "--rcfile=${workspaceFolder}/.pylintrc",
+      "--load-plugins=pylint_quotes"
+    ],
+    "python.linting.pylintCategorySeverity.refactor": "Warning",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": "${workspaceFolder}/venv/bin/pylint",
+    "python.linting.pylintUseMinimalCheckers": false,
+    "python.sortImports.args": [
+      "--settings-path=${workspaceFolder}/.isort.cfg"
+    ],
+    "python.sortImports.path": "${workspaceFolder}/venv/bin/isort",
+
+    // shellcheck settings
+    "shellcheck.customArgs": ["-x"],
+    "shellcheck.enable": true,
+
+    // shellformat settings
+    "shellformat.effectLanguages": [
+      "azcli",
+      "dockerfile",
+      "dotenv",
+      "gitignore",
+      "hosts",
+      "ignore",
+      "jvmoptions",
+      "properties",
+      "shellscript",
+      "spring-boot-properties"
+    ],
+    "shellformat.flag": "-bn -ci -i 2",
+
+    // language specific settings - css
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.rulers": [80],
+      "editor.tabSize": 2
+    },
+
+    // language specific settings - dockerfile
+    "[dockerfile]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format",
+      "editor.rulers": [72, 80],
+      "editor.tabSize": 2
+    },
+
+    // language specific settings - html
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.rulers": [80],
+      "editor.tabSize": 2
+    },
+
+    // language specific settings - json
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    },
+
+    // language specific settings - jsonc
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    },
+
+    // language specific settings - markdown
+    "[markdown]": {
+      "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+      "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+      },
+      "editor.rulers": [80],
+      "editor.tabSize": 2,
+      "editor.wordWrap": "on",
+      "editor.wordWrapColumn": 80
+    },
+
+    // language specific settings - python
+    "[python]": {
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      },
+      "editor.defaultFormatter": "ms-python.python",
+      "editor.formatOnPaste": false,
+      "editor.rulers": [72, 88, 99],
+      "editor.tabSize": 4
+    },
+
+    // language specific settings - shellscript
+    "[shellscript]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format",
+      "editor.rulers": [72, 80],
+      "editor.tabSize": 2
+    },
+
+    // language specific settings - yaml
+    "[yaml]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.tabSize": 2
+    }
+  }
+}
