@@ -1,0 +1,185 @@
+/* cspell configuration file.
+
+This file contains settings, customizations and configurations for cspell - Code
+Spell Checker.
+
+Usages:
+  This file is being used as configuration file for cspell CLI as well as for
+  cspell Visual Studio Code (vscode) extension Code Spell Checker.
+
+Examples:
+  cspell CLI example: `cspell --config cspell.json {filename}`
+
+Notes:
+  Use following links for more information:
+  - <https://github.com/streetsidesoftware/cspell/tree/master/packages/cspell>
+  - <https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker>
+
+Authors:
+  - Tuba Hashmi <hashmiatna@gmail.com>
+
+Maintainers:
+  - Tuba Hashmi <hashmiatna@gmail.com>
+*/
+
+{
+  // schema - Schema for the configuration file
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/master/cspell.schema.json",
+
+  // version - Version of the configuration file
+  "version": "0.2",
+
+  // name - Name of the configuration file
+  "name": "Project cspell configuration file",
+
+  // maxNumberOfProblems - Maximum number of problems to report in a file
+  "maxNumberOfProblems": 1000,
+
+  // minWordLength - minimum length of a word to be checked
+  "minWordLength": 4,
+
+  // numSuggestions - Number of suggestions to make
+  "numSuggestions": 16,
+
+  // language - Current active spelling language
+  "language": "en",
+
+  // words - Words to be always considered correct
+  "words": [],
+
+  // flagWords - Words to be always considered incorrect
+  "flagWords": [],
+
+  // ignoreWords - Words to be ignored
+  "ignoreWords": [],
+
+  // enableFiletypes - File types to check
+  "enableFiletypes": [
+    "arrow",
+    "avro",
+    "azcli",
+    "bat",
+    "clojure",
+    "code-runner-output",
+    "coffeescript",
+    "config",
+    "csv",
+    "csv (caret)",
+    "csv (colon)",
+    "csv (dot)",
+    "csv (double quote)",
+    "csv (equals)",
+    "csv (hyphen)",
+    "csv (pipe)",
+    "csv (semicolon)",
+    "csv (tilde)",
+    "csv (whitespace)",
+    "diff",
+    "dockerfile",
+    "dotenv",
+    "editorconfig",
+    "env",
+    "erlang",
+    "excel",
+    "fsharp",
+    "git-rebase",
+    "groovy",
+    "hjson",
+    "hlsl",
+    "hosts",
+    "http",
+    "ignore",
+    "ini",
+    "jinja",
+    "json5",
+    "jsonl",
+    "jsx-tags",
+    "julia",
+    "juliamarkdown",
+    "jupyter",
+    "jvmoptions",
+    "log",
+    "lua",
+    "macro",
+    "makefile",
+    "objective-c",
+    "objective-cpp",
+    "parquet",
+    "perl",
+    "perl6",
+    "pip-requirements",
+    "powershell",
+    "properties",
+    "r",
+    "rainbow hover markup",
+    "razor",
+    "ruby",
+    "sass",
+    "sass.hover",
+    "scminput",
+    "search-result",
+    "shaderlab",
+    "shellscript",
+    "sql",
+    "ssh_config",
+    "svelte",
+    "svg",
+    "swift",
+    "toml",
+    "tsv",
+    "txt",
+    "vb",
+    "vue",
+    "xml",
+    "xquery",
+    "xsl"
+  ],
+
+  // enabledLanguageIds - languageIds for the files to spell check
+  "enabledLanguageIds": [
+    "asciidoc",
+    "c",
+    "cpp",
+    "csharp",
+    "css",
+    "git-commit",
+    "go",
+    "graphql",
+    "handlebars",
+    "haskell",
+    "html",
+    "jade",
+    "java",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "latex",
+    "less",
+    "markdown",
+    "php",
+    "plaintext",
+    "python",
+    "pug",
+    "restructuredtext",
+    "rust",
+    "scala",
+    "scss",
+    "text",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+    "yml"
+  ],
+
+  // ignorePaths - Glob patterns of files to be ignored
+  "ignorePaths": [
+    "**/.git/objects/**",
+    "**/.venv/**",
+    "**/node_modules/**",
+    "**/package-lock.json",
+    "**/requirements/**",
+    "**/venv/**",
+    "**/vscode-extension/**"
+  ]
+}
